@@ -1,0 +1,41 @@
+{
+    "name": "exenjer/gamemoney-laravel",
+    "description": "Gamemoney Laravel SDK",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.1",
+    "authors": [
+        {
+            "name": "ExenJer",
+            "email": "exenjers@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1.3",
+        "guzzlehttp/guzzle": "^6.4",
+        "illuminate/contracts": "^5.8|^6.0|^7.0",
+        "illuminate/support": "~5.8.35|^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ExenJer\\GamemoneyLaravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ExenJer\\GamemoneyLaravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ExenJer\\GamemoneyLaravel\\GamemoneyServiceProvider"
+            ]
+        }
+    }
+}
