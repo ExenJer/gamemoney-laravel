@@ -32,4 +32,12 @@ class Signature implements SignatureFactory
     {
         return new HmacSignature($this->config->get('gamemoney.hmac'));
     }
+
+    /**
+     * @return SignatureInterface
+     */
+    public function getRSASign(): SignatureInterface
+    {
+        return new RSASignature('');
+    }
 }

@@ -3,11 +3,10 @@
 
 namespace ExenJer\GamemoneyLaravel\Signature;
 
-
 use ExenJer\GamemoneyLaravel\Signature\Contracts\Signature;
-use ExenJer\GamemoneyLaravel\Utilities\Arr;
 
-final class HmacSignature implements Signature
+
+final class RSASignature implements Signature
 {
     /**
      * @var string
@@ -15,21 +14,30 @@ final class HmacSignature implements Signature
     private $privateKey;
 
     /**
-     * HmacSignature constructor.
+     * @var string
+     */
+    private $passwordPhrase;
+
+    /**
+     * Signature constructor.
      *
      * @param string $privateKey
+     * @param string $passwordPhrase
      */
-    public function __construct(string $privateKey)
+    public function __construct(string $privateKey, string $passwordPhrase = '')
     {
         $this->privateKey = $privateKey;
+        $this->passwordPhrase = $passwordPhrase;
     }
 
     /**
+     * @TODO
+     *
      * @param array $data
      * @return string
      */
     public function getSignature(array $data): string
     {
-        return hash_hmac('sha256', Arr::toSignString($data), $this->privateKey);
+        return '';
     }
 }
