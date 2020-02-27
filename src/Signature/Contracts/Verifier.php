@@ -12,5 +12,9 @@ use ExenJer\GamemoneyLaravel\Signature\SignatureVerificationData;
  */
 interface Verifier
 {
+    /**
+     * @param array $data
+     * @return SignatureVerificationData
+     */
     public function check(array $data): SignatureVerificationData ;
 }
